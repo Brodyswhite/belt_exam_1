@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex justify-content-between">
+        <a href="/dashboard" class="btn btn-primary">Home</a>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+    <h1 class="text-center">Quotes</h1>
+    {% for word in user.quotes.all %}
+        <div class="card col-10">
+            <h4 class="card-text">{{ word.author }}</h4>
+            <p class="card-text"> "{{ word.quote }}"</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
